@@ -20,6 +20,8 @@ dist-ssr
 
 # misc
 .DS_Store
+
+# local env files
 .env
 .env.local
 .env.staging
@@ -35,8 +37,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env.development
 
 # eslint cache
 .eslintcache
