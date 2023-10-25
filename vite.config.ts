@@ -34,7 +34,7 @@ export default defineConfig(({ command, mode }) => {
       // ...some configs
 
       server: {
-        port: 3000,
+        port: env.PORT,
       },
       resolve: {
         alias: {
