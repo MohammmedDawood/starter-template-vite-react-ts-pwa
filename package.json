@@ -49,9 +49,7 @@
     ],
     "src/**/*.{js,jsx,ts,tsx,json}": [
       "eslint --max-warnings=0"
-    ],
-    "*.{ts,tsx}": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    ]
   },
   "author": {
     "name": "Mohammed Dawood",
