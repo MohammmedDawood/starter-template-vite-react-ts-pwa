@@ -2,5 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # TODO (Suren): Add more tests
-# npm run test:once
+npm run test:once
 npx lint-staged
