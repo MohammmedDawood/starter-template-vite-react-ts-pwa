@@ -30,6 +30,11 @@
     "experimentalDecorators": true,
     "skipDefaultLibCheck": true,
     "baseUrl": "./",
+    "types": [
+      "vite-plugin-pwa/client",
+      //proccess env
+      "node"
+    ],
     "paths": {
       "@/*": ["src/*"]
     }

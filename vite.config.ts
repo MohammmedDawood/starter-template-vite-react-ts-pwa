@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import manifest from './manifest.json';
-import { number } from 'prop-types';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -46,8 +45,41 @@ export default defineConfig(({ command, mode }) => {
     };
   } else {
     // command === 'build'
+    // build specific config
     return {
-      // build specific config
+      // vite config
+      define: {
+        'process.env': env,
+      },
+      plugins: [
+        react(),
+        VitePWA({
+          manifest,
+          // registerType: 'autoUpdate',
+          includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+          // switch to "true" to enable sw on development
+
+          devOptions: {
+            enabled: false,
+          },
+          // add this to cache all the imports
+
+          workbox: {
+            globPatterns: ['**/*.{js,css,html}', '**/*.{svg,png,jpg,gif}'],
+          },
+        }),
+      ],
+      // ...some configs
+
+      server: {
+        // env.PORT is injected by loadEnv()
+        port: parseInt(env.PORT) || 3000,
+      },
+      resolve: {
+        alias: {
+          '@': path.resolve(__dirname, './src'),
+        },
+      },
     };
   }
 });
