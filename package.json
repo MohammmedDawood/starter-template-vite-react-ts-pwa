@@ -7,13 +7,12 @@
   "homepage": "/",
   "license": "MIT",
   "scripts": {
-    "dev": "vite --mode development",
+    "dev": "vite --mode development --host",
+    "preview": "vite preview",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --check .",
-    "preview": "vite preview",
     "https-preview": "serve dist",
-    "prepare": "husky install",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@mantine/carousel": "^7.1.5",
@@ -76,8 +75,14 @@
   },
   "keywords": [
     "react",
-    "pwa",
-    "starter-kit",
-    "vite"
+    "mantine",
+    "typescript",
+    "vite",
+    "prettier",
+    "husky",
+    "PWA",
+    "i18n",
+    "redux",
+    "starter-kit"
   ]
 }
