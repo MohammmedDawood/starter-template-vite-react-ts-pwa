@@ -8,7 +8,7 @@ interface LayoutState {
 
 const slice = createSlice({
   name: 'user',
-  initialState: { dir: 'ltr' } as LayoutState,
+  initialState: { dir: 'ltr', theme: 'light' } as LayoutState,
   reducers: {
     toggleDirection(state) {
       state.dir = state.dir === 'ltr' ? 'rtl' : 'ltr';
