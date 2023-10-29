@@ -3,7 +3,7 @@ import { RootState } from '.';
 
 interface LayoutState {
   dir: 'ltr' | 'rtl';
-  theme: 'light' | 'dark';
+  theme: 'light' | 'dark' | 'auto';
 }
 
 const slice = createSlice({
@@ -13,8 +13,10 @@ const slice = createSlice({
     toggleDirection(state) {
       state.dir = state.dir === 'ltr' ? 'rtl' : 'ltr';
     },
-    toggleTheme(state) {
-      state.theme = state.theme === 'light' ? 'dark' : 'light';
+    toggleTheme(state, action) {
+      console.log('toggleTheme', action.payload);
+
+      state.theme = action.payload;
     },
   },
 });
