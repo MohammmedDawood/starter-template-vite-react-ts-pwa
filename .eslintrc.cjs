@@ -5,8 +5,12 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'react-app',
+    'react-app/jest',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
-  ignorePatterns: ['build', '.eslintrc.cjs'],
+  ignorePatterns: ['build', '.eslintrc.cjs', 'node_modules', '**/*.css'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'react', 'react-hooks', '@typescript-eslint'],
   parserOptions: {
@@ -21,5 +25,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'prettier/prettier': 'warn',
   },
 };

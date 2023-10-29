@@ -36,7 +36,8 @@
       "node"
     ],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@test-utils": ["./test-utils"]
     }
   },
   "include": ["src"],
