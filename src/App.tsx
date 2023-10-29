@@ -5,9 +5,11 @@ import '@mantine/core/styles.css';
 import { registerSW } from 'virtual:pwa-register';
 import { MantineProvider, Button } from '@mantine/core';
 import { SnackbarProvider, enqueueSnackbar } from 'notistack';
+import { Provider } from 'react-redux';
 
 import { theme } from '@/theme/theme';
 import { Router } from '@/routes/Router';
+import store from '@/store';
 
 // add this to prompt for a refresh
 const updateSW = registerSW({
@@ -62,7 +64,9 @@ function AppInner() {
 function App() {
   return (
     <React.StrictMode>
-      <AppInner />
+      <Provider store={store}>
+        <AppInner />
+      </Provider>
     </React.StrictMode>
   );
 }
